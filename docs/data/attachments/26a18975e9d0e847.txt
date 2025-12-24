@@ -1,0 +1,4 @@
+Navigated to login page
+Clicked continue button
+Filled email: admin.devrainyday@yopmail.com
+Clicked continue for email

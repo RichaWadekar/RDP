@@ -1,0 +1,4 @@
+Test failed: locator.click: Test ended.
+Call log:
+  - waiting for locator('button:has-text("Check Inbox")').first()
+

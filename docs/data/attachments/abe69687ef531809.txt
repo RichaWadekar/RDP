@@ -1,0 +1,4 @@
+Test failed: page.goto: Test ended.
+Call log:
+  - navigating to "https://yopmail.com/", waiting until "networkidle"
+
