@@ -1,0 +1,42 @@
+name: Playwright tests → Allure Report → Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test-and-generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests (generate Allure results)
+        run: npx playwright test --reporter=dot
+
+      - name: Generate Allure report
+        run: npx allure generate allure-results -o allure-report --clean
+
+      - name: Upload Allure report for Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./allure-report
+
+  deploy:
+    needs: test-and-generate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
