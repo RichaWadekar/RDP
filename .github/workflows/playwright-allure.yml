@@ -27,8 +27,9 @@ jobs:
         run: rm -rf allure-results || true
 
       - name: Run Playwright tests (generate Allure results)
-        run: npx playwright test
+        run: npx playwright test --reporter=dot --retries=0
         continue-on-error: true
+        timeout-minutes: 15
 
       - name: List allure-results
         if: always()
@@ -36,7 +37,7 @@ jobs:
 
       - name: Generate Allure report
         if: always()
-        run: npx allure generate allure-results -o allure-report --clean
+        run: npx allure generate allure-results -o allure-report --clean || npx allure generate . -o allure-report --clean
 
       - name: Upload Allure report for Pages
         if: always()
