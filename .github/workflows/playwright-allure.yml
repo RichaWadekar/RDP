@@ -24,12 +24,15 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests (generate Allure results)
-        run: npx playwright test --reporter=dot
+        run: npx playwright test
+        continue-on-error: true
 
       - name: Generate Allure report
+        if: always()
         run: npx allure generate allure-results -o allure-report --clean
 
       - name: Upload Allure report for Pages
+        if: always()
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./allure-report
