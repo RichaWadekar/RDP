@@ -5,6 +5,7 @@ function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
+// Trigger workflow run - Live Allure Report
 test('Rainyday Admin Login via Yopmail OTP - Standalone', async ({ browser }) => {
   test.setTimeout(180000); // 3 minutes
   console.log('🧪 Starting Rainyday admin login test...\n');
