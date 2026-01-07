@@ -1,5 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","67964","Login to RainyDay Parents portal using Yopmail OTP","","2025-12-24","failed","2025-12-24","","firsttest.spec.js","",""
-"","60739","RainyDay Parents - Login with OTP","","2025-12-24","broken","2025-12-24","","rainyDayParentLogin.spec.js","",""
-"","30075","basic test","","2025-12-24","passed","2025-12-24","","example.spec.js","",""
-"","73299","Login and create activity (football) in one flow","","2025-12-24","failed","2025-12-24","","createActivityWithLogin.spec.js","",""

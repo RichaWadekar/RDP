@@ -1,2 +1,0 @@
-
-❌ LOGIN FAILED: ❌ OTP not found in Yopmail. Email may not have been sent. Check yopmail-no-otp.png

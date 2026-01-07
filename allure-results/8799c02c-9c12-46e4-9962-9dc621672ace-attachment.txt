@@ -1,5 +1,0 @@
-
-❌ LOGIN FAILED: locator.waitFor: Timeout 10000ms exceeded.
-Call log:
-  - waiting for locator('button:has-text("Continue")').nth(1) to be visible
-

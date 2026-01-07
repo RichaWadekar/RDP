@@ -1,9 +1,0 @@
-Reusing storageState.json — skipping login
-Found Continue button after OTP; clicking to advance login
-Post-login heading: Enter Email Authenticated: false
-Auth fallback attempt 1
-Clicked fallback button: Continue
-Auth fallback attempt 2
-Clicked fallback button: Continue
-Auth fallback attempt 3
-Clicked fallback button: Continue

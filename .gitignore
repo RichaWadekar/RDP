@@ -1,0 +1,41 @@
+node_modules/
+
+# Playwright / test artifacts
+test-results/
+playwright-report/
+allure-results/
+allure-report/
+
+# Local docs/data exports and large attachments
+docs/data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+
+# npm
+package-lock.json
+# Node
+node_modules/
+
+# Playwright / test artifacts
+test-results/
+playwright-report/
+allure-results/
+allure-report/
+
+# Local docs/data exports and large attachments
+docs/data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+
+# npm
+package-lock.json
