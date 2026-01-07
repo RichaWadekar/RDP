@@ -1,0 +1,279 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]:
+        - link "Rainy Day Parents Logo" [ref=e6] [cursor=pointer]:
+          - /url: /content-moderation
+          - img "Rainy Day Parents Logo" [ref=e7]
+        - button [ref=e8] [cursor=pointer]:
+          - img [ref=e9]
+      - navigation [ref=e10]:
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "Content Moderation" [ref=e13] [cursor=pointer]:
+              - /url: /content-moderation
+              - img [ref=e15]
+              - generic [ref=e17]: Content Moderation
+          - listitem [ref=e18]:
+            - link "User Moderation" [ref=e19] [cursor=pointer]:
+              - /url: /user-moderation
+              - img [ref=e21]
+              - generic [ref=e26]: User Moderation
+          - listitem [ref=e27]:
+            - link "Activities" [ref=e28] [cursor=pointer]:
+              - /url: /activities
+              - img [ref=e30]
+              - generic [ref=e32]: Activities
+          - listitem [ref=e33]:
+            - link "App Users" [ref=e34] [cursor=pointer]:
+              - /url: /app-users
+              - img [ref=e36]
+              - generic [ref=e41]: App Users
+          - listitem [ref=e42]:
+            - link "Admin Users" [ref=e43] [cursor=pointer]:
+              - /url: /admin-users
+              - img [ref=e45]
+              - generic [ref=e57]: Admin Users
+          - listitem [ref=e58]:
+            - link "FAQs" [ref=e59] [cursor=pointer]:
+              - /url: /faqs
+              - img [ref=e61]
+              - generic [ref=e64]: FAQs
+          - listitem [ref=e65]:
+            - link "Word Moderation" [ref=e66] [cursor=pointer]:
+              - /url: /banned-words
+              - img [ref=e68]
+              - generic [ref=e71]: Word Moderation
+    - generic [ref=e72]:
+      - banner [ref=e73]:
+        - heading "Content Moderation" [level=1] [ref=e75]
+        - button "R Rainyday SUPER_ADMIN" [ref=e78] [cursor=pointer]:
+          - generic [ref=e79]: R
+          - generic [ref=e80]:
+            - generic [ref=e81]: Rainyday
+            - generic [ref=e82]: SUPER_ADMIN
+          - img [ref=e83]
+      - main [ref=e85]:
+        - generic [ref=e86]:
+          - generic [ref=e88]:
+            - generic [ref=e89]:
+              - generic [ref=e90]:
+                - generic [ref=e91]: Reported Date
+                - generic [ref=e95]:
+                  - textbox "mm/dd/yyyy" [ref=e96]
+                  - generic [ref=e97]:
+                    - button "Clear date":
+                      - img
+              - generic [ref=e98]:
+                - generic [ref=e99]: Report Reason
+                - generic [ref=e100]:
+                  - combobox [ref=e101]:
+                    - option "All Report Reasons" [selected]
+                    - option "Inappropriate Content"
+                    - option "Spam"
+                    - option "Harassment"
+                    - option "False Information"
+                    - option "Bullying / Discriminatory"
+                    - option "Disrespectful"
+                    - option "Other"
+                  - button "All Report Reasons" [ref=e102] [cursor=pointer]:
+                    - generic [ref=e103]: All Report Reasons
+                    - img [ref=e105]
+              - generic [ref=e107]:
+                - generic [ref=e108]: Status
+                - generic [ref=e109]:
+                  - combobox [ref=e110]:
+                    - option "All Statuses" [selected]
+                    - option "Action Required"
+                    - option "Content Removed"
+                    - option "Content Ignored"
+                  - button "All Statuses" [ref=e111] [cursor=pointer]:
+                    - generic [ref=e112]: All Statuses
+                    - img [ref=e114]
+              - generic [ref=e116]:
+                - generic [ref=e117]: Content
+                - generic [ref=e118]:
+                  - combobox [ref=e119]:
+                    - option "All" [selected]
+                    - option "Post"
+                    - option "Comment"
+                  - button "All" [ref=e120] [cursor=pointer]:
+                    - generic [ref=e121]: All
+                    - img [ref=e123]
+            - generic [ref=e125]:
+              - button "Clear Filters" [disabled]:
+                - generic:
+                  - img
+                  - text: Clear Filters
+          - table [ref=e129]:
+            - rowgroup [ref=e130]:
+              - row "No. Content Type Sort by Content Type Report Reason Sort by Report Reason Reported By Sort by Reported By Reported At Sort by Reported At Status Sort by Status Actions Sort by Actions" [ref=e131]:
+                - columnheader "No." [ref=e132]
+                - columnheader "Content Type Sort by Content Type" [ref=e133]:
+                  - generic [ref=e134]:
+                    - text: Content Type
+                    - button "Sort by Content Type" [ref=e135] [cursor=pointer]:
+                      - img [ref=e137]
+                - columnheader "Report Reason Sort by Report Reason" [ref=e139]:
+                  - generic [ref=e140]:
+                    - text: Report Reason
+                    - button "Sort by Report Reason" [ref=e141] [cursor=pointer]:
+                      - img [ref=e143]
+                - columnheader "Reported By Sort by Reported By" [ref=e145]:
+                  - generic [ref=e146]:
+                    - text: Reported By
+                    - button "Sort by Reported By" [ref=e147] [cursor=pointer]:
+                      - img [ref=e149]
+                - columnheader "Reported At Sort by Reported At" [ref=e151]:
+                  - generic [ref=e152]:
+                    - text: Reported At
+                    - button "Sort by Reported At" [ref=e153] [cursor=pointer]:
+                      - img [ref=e155]
+                - columnheader "Status Sort by Status" [ref=e157]:
+                  - generic [ref=e158]:
+                    - text: Status
+                    - button "Sort by Status" [ref=e159] [cursor=pointer]:
+                      - img [ref=e161]
+                - columnheader "Actions Sort by Actions" [ref=e163]:
+                  - generic [ref=e164]:
+                    - text: Actions
+                    - button "Sort by Actions" [ref=e165] [cursor=pointer]:
+                      - img [ref=e167]
+            - rowgroup [ref=e169]:
+              - row "1 post False Information Hardika Sen Dec 24, 2025 Action Required View" [ref=e170] [cursor=pointer]:
+                - cell "1" [ref=e171]
+                - cell "post" [ref=e172]
+                - cell "False Information" [ref=e173]
+                - cell "Hardika Sen" [ref=e174]
+                - cell "Dec 24, 2025" [ref=e175]
+                - cell "Action Required" [ref=e176]:
+                  - generic [ref=e178]:
+                    - img [ref=e179]
+                    - text: Action Required
+                - cell "View" [ref=e181]:
+                  - button "View" [ref=e183]:
+                    - generic [ref=e184]: View
+              - row "2 post Inappropriate Content Hardika Sen Dec 22, 2025 Content Removed View" [ref=e185] [cursor=pointer]:
+                - cell "2" [ref=e186]
+                - cell "post" [ref=e187]
+                - cell "Inappropriate Content" [ref=e188]
+                - cell "Hardika Sen" [ref=e189]
+                - cell "Dec 22, 2025" [ref=e190]
+                - cell "Content Removed" [ref=e191]:
+                  - generic [ref=e193]:
+                    - img [ref=e194]
+                    - text: Content Removed
+                - cell "View" [ref=e197]:
+                  - button "View" [ref=e199]:
+                    - generic [ref=e200]: View
+              - row "3 post Disrespectful Hardika Sen Dec 22, 2025 Content Ignored View" [ref=e201] [cursor=pointer]:
+                - cell "3" [ref=e202]
+                - cell "post" [ref=e203]
+                - cell "Disrespectful" [ref=e204]
+                - cell "Hardika Sen" [ref=e205]
+                - cell "Dec 22, 2025" [ref=e206]
+                - cell "Content Ignored" [ref=e207]:
+                  - generic [ref=e209]:
+                    - img [ref=e210]
+                    - text: Content Ignored
+                - cell "View" [ref=e213]:
+                  - button "View" [ref=e215]:
+                    - generic [ref=e216]: View
+              - row "4 post Inappropriate Content Hardika Sen Dec 22, 2025 Action Required View" [ref=e217] [cursor=pointer]:
+                - cell "4" [ref=e218]
+                - cell "post" [ref=e219]
+                - cell "Inappropriate Content" [ref=e220]
+                - cell "Hardika Sen" [ref=e221]
+                - cell "Dec 22, 2025" [ref=e222]
+                - cell "Action Required" [ref=e223]:
+                  - generic [ref=e225]:
+                    - img [ref=e226]
+                    - text: Action Required
+                - cell "View" [ref=e228]:
+                  - button "View" [ref=e230]:
+                    - generic [ref=e231]: View
+              - row "5 post Bullying / Discriminatory Hardika Sen Dec 19, 2025 Action Required View" [ref=e232] [cursor=pointer]:
+                - cell "5" [ref=e233]
+                - cell "post" [ref=e234]
+                - cell "Bullying / Discriminatory" [ref=e235]
+                - cell "Hardika Sen" [ref=e236]
+                - cell "Dec 19, 2025" [ref=e237]
+                - cell "Action Required" [ref=e238]:
+                  - generic [ref=e240]:
+                    - img [ref=e241]
+                    - text: Action Required
+                - cell "View" [ref=e243]:
+                  - button "View" [ref=e245]:
+                    - generic [ref=e246]: View
+              - row "6 post Harassment Hardika Sen Dec 19, 2025 Action Required View" [ref=e247] [cursor=pointer]:
+                - cell "6" [ref=e248]
+                - cell "post" [ref=e249]
+                - cell "Harassment" [ref=e250]
+                - cell "Hardika Sen" [ref=e251]
+                - cell "Dec 19, 2025" [ref=e252]
+                - cell "Action Required" [ref=e253]:
+                  - generic [ref=e255]:
+                    - img [ref=e256]
+                    - text: Action Required
+                - cell "View" [ref=e258]:
+                  - button "View" [ref=e260]:
+                    - generic [ref=e261]: View
+              - row "7 post False Information Hardika Sen Dec 16, 2025 Content Ignored View" [ref=e262] [cursor=pointer]:
+                - cell "7" [ref=e263]
+                - cell "post" [ref=e264]
+                - cell "False Information" [ref=e265]
+                - cell "Hardika Sen" [ref=e266]
+                - cell "Dec 16, 2025" [ref=e267]
+                - cell "Content Ignored" [ref=e268]:
+                  - generic [ref=e270]:
+                    - img [ref=e271]
+                    - text: Content Ignored
+                - cell "View" [ref=e274]:
+                  - button "View" [ref=e276]:
+                    - generic [ref=e277]: View
+              - row "8 post Bullying / Discriminatory Hardika Sen Dec 15, 2025 Content Removed View" [ref=e278] [cursor=pointer]:
+                - cell "8" [ref=e279]
+                - cell "post" [ref=e280]
+                - cell "Bullying / Discriminatory" [ref=e281]
+                - cell "Hardika Sen" [ref=e282]
+                - cell "Dec 15, 2025" [ref=e283]
+                - cell "Content Removed" [ref=e284]:
+                  - generic [ref=e286]:
+                    - img [ref=e287]
+                    - text: Content Removed
+                - cell "View" [ref=e290]:
+                  - button "View" [ref=e292]:
+                    - generic [ref=e293]: View
+              - row "9 post Bullying / Discriminatory Hardika Sen Dec 15, 2025 Content Removed View" [ref=e294] [cursor=pointer]:
+                - cell "9" [ref=e295]
+                - cell "post" [ref=e296]
+                - cell "Bullying / Discriminatory" [ref=e297]
+                - cell "Hardika Sen" [ref=e298]
+                - cell "Dec 15, 2025" [ref=e299]
+                - cell "Content Removed" [ref=e300]:
+                  - generic [ref=e302]:
+                    - img [ref=e303]
+                    - text: Content Removed
+                - cell "View" [ref=e306]:
+                  - button "View" [ref=e308]:
+                    - generic [ref=e309]: View
+              - row "10 post Spam Hardika Sen Dec 15, 2025 Action Required View" [ref=e310] [cursor=pointer]:
+                - cell "10" [ref=e311]
+                - cell "post" [ref=e312]
+                - cell "Spam" [ref=e313]
+                - cell "Hardika Sen" [ref=e314]
+                - cell "Dec 15, 2025" [ref=e315]
+                - cell "Action Required" [ref=e316]:
+                  - generic [ref=e318]:
+                    - img [ref=e319]
+                    - text: Action Required
+                - cell "View" [ref=e321]:
+                  - button "View" [ref=e323]:
+                    - generic [ref=e324]: View
+  - region "Notifications (F8)":
+    - list
+  - alert [ref=e326]: Admin Content Moderation
+```

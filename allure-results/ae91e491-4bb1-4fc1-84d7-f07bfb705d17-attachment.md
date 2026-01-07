@@ -1,0 +1,33 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - img "Background pattern" [ref=e6]
+      - img "Rainyday Logo" [ref=e8]
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Login with OTP" [level=1] [ref=e11]
+        - paragraph [ref=e12]: Enter the 6-digit code sent to admin.devrainyday@yopmail.com
+        - generic [ref=e13]:
+          - textbox [ref=e14]
+          - textbox [ref=e15]
+          - textbox [ref=e16]
+          - textbox [ref=e17]
+          - textbox [ref=e18]
+          - textbox [ref=e19]
+        - button "Resend Code" [ref=e20] [cursor=pointer]:
+          - img [ref=e21]
+          - text: Resend Code
+      - button "Go Back" [ref=e27] [cursor=pointer]
+  - region "Notifications (F8)":
+    - list [ref=e29]:
+      - status [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: Code Sent
+          - generic [ref=e33]: Please check your email for the verification code.
+        - button [ref=e34] [cursor=pointer]:
+          - img [ref=e35]
+  - alert [ref=e38]
+```

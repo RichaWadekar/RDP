@@ -1,0 +1,3 @@
+🔐 Performing Yopmail OTP login...
+❌ Login failed: emailPage.locator(...).first(...).catch is not a function
+❌ Test failed: emailPage.locator(...).first(...).catch is not a function

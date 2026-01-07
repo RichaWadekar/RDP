@@ -1,0 +1,43 @@
+Yopmail email body: 
+Yopmail email body: 
+Yopmail email body: 
+Deliverability
+  
+
+Reply
+
+Forward
+   
+
+Print
+  
+
+Delete
+  
+
+Welcome to Rainyday Mobile
+
+<support@rainydayparents.com>
+
+Wednesday, December 24, 2025 3:12:11 PM
+
+ Show pictures
+
+Your verification code is: 663436
+
+If you are having any issues with your account, please don't hesitate to contact us by replying to this email.
+
+
+Thanks!
+Rainyday
+
+
+
+If you did not make this request, please contact us by replying to this email.
+Found OTP inputs with selector: input.w-12 count: 6
+After OTP, URL: https://dev.rainydayparents.com/login
+After OTP, Title: Rainyday Login
+Error message after OTP: 
+No submit button found; pressing Enter on last OTP input
+Heading after OTP submission: Login with OTP
+Detected login screen after OTP submission — login did not succeed. Saving diagnostics.

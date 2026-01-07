@@ -1,0 +1,5 @@
+
+❌ LOGIN FAILED: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://yopmail.com/en/wm/admin.devrainyday
+Call log:
+  - navigating to "https://yopmail.com/en/wm/admin.devrainyday", waiting until "domcontentloaded"
+

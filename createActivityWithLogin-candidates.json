@@ -1,0 +1,10 @@
+[
+  {
+    "tag": "BUTTON",
+    "text": "Continue",
+    "title": null,
+    "ariaLabel": null,
+    "dataTestId": null,
+    "classes": "btn-primary focus:ring-[#D27F62] shadow-sm hover:shadow-md h-9 py-2 px-4 inline-flex items-center justify-center font-medium w-full bg-primary hover:bg-primary/90 text-white"
+  }
+]

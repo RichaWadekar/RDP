@@ -1,0 +1,5 @@
+
+❌ LOGIN FAILED: locator.click: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for locator('button:has-text("Continue")').nth(1)
+
