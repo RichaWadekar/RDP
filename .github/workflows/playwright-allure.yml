@@ -1,12 +1,23 @@
-name: Playwright tests → Allure Report → Pages
+name: E2E Admin Panel → Allure Report → Live Link
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   test-and-generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,52 +32,93 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       - name: Clean allure-results folder
         run: rm -rf allure-results || true
 
-      - name: Run Playwright tests (generate Allure results)
-        run: npx playwright test --grep -v "demo-login" --reporter=dot --retries=0
+      - name: Run E2E Admin Panel Test
+        run: |
+          npx playwright test tests/E2E_Admin_All_Modules_With_Redirection.spec.js \
+            --reporter=list,allure-playwright \
+            --retries=1
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 35
+        env:
+          CI: true
 
-      - name: If no tests found, create sample Allure result
+      - name: Ensure allure-results exists
         if: always()
         run: |
-          if [ ! -d "allure-results" ]; then
+          if [ ! -d "allure-results" ] || [ -z "$(ls -A allure-results 2>/dev/null)" ]; then
+            echo "Creating allure-results with environment info..."
             mkdir -p allure-results
-            cat > allure-results/sample.json << 'EOF'
-          {
-            "name": "Rainyday Login Test Status",
-            "status": "passed",
-            "stage": "finished",
-            "start": $(date +%s)000,
-            "stop": $(($(date +%s)+1000))000,
-            "uuid": "demo-test-uuid",
-            "historyId": "demo-test-id",
-            "testCaseId": "demo-test-case"
-          }
+            cat > allure-results/environment.properties << EOF
+          Browser=Chromium
+          Environment=Stage
+          URL=https://stage.rainydayparents.com
+          Test.Suite=E2E Admin Panel Automation
           EOF
           fi
 
       - name: List allure-results
         if: always()
-        run: ls -la allure-results/ || echo "No allure-results found"
+        run: |
+          echo "=== Allure Results ==="
+          ls -la allure-results/ || echo "No allure-results found"
+          echo "=== File count ==="
+          find allure-results -type f | wc -l || echo "0 files"
+
+      - name: Install Allure CLI
+        if: always()
+        run: |
+          npm install -g allure-commandline --save-dev
 
       - name: Generate Allure report
         if: always()
-        run: npx allure generate allure-results -o allure-report --clean || npx allure generate . -o allure-report --clean
+        run: |
+          npx allure generate allure-results -o allure-report --clean
+          echo "=== Allure Report Generated ==="
+          ls -la allure-report/
 
-      - name: Upload Allure report for Pages
+      - name: Add custom index for better navigation
         if: always()
-        uses: actions/upload-pages-artifact@v1
+        run: |
+          cat > allure-report/widgets/environment.json << EOF
+          [
+            {"name": "Test Suite", "value": "E2E Admin Panel - All Modules"},
+            {"name": "Environment", "value": "Stage"},
+            {"name": "URL", "value": "https://stage.rainydayparents.com"},
+            {"name": "Browser", "value": "Chromium"},
+            {"name": "Execution Date", "value": "$(date +'%Y-%m-%d %H:%M:%S UTC')"}
+          ]
+          EOF
+
+      - name: Setup Pages
+        if: always()
+        uses: actions/configure-pages@v4
+
+      - name: Upload Allure report artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./allure-report
 
   deploy:
-    needs: test-and-generate
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: test-and-generate
+    if: always()
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Print Live Report URL
+        run: |
+          echo "=============================================="
+          echo "🎉 ALLURE REPORT LIVE LINK:"
+          echo "https://richawadekar.github.io/RDP-Automation/"
+          echo "=============================================="
