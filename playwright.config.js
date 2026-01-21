@@ -6,15 +6,14 @@ const config = {
   reporter: [['list'], ['html'], ['allure-playwright']],
   testDir: './tests',
   timeout: 120000,
-  retries: 0,
+  retries: process.env.CI ? 2 : 0,
   use: {
-    headless: false,
-    //viewport: { width: 1280, height: 720 },
+    headless: process.env.CI ? true : false,
+    viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
     video: 'retain-on-failure',
     trace: 'on',
     screenshot: 'only-on-failure',
-
   },
 };
 

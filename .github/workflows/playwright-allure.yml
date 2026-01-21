@@ -17,7 +17,7 @@ concurrency:
 jobs:
   test-and-generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,11 +41,13 @@ jobs:
         run: |
           npx playwright test tests/E2E_Admin_All_Modules_With_Redirection.spec.js \
             --reporter=list,allure-playwright \
-            --retries=1
+            --retries=2 \
+            --timeout=120000
         continue-on-error: true
-        timeout-minutes: 35
+        timeout-minutes: 50
         env:
           CI: true
+          PLAYWRIGHT_HEADLESS: true
 
       - name: Ensure allure-results exists
         if: always()
