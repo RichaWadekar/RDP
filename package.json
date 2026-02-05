@@ -4,15 +4,18 @@
   "description": "Playwright automation skeleton project",
   "main": "index.js",
   "devDependencies": {
-    "@playwright/test": "^1.44.0",
+    "@playwright/test": "^1.58.1",
+    "@types/node": "^25.2.0",
     "allure-commandline": "^2.36.0",
     "allure-playwright": "^3.4.3"
   },
   "scripts": {
     "test": "npx playwright test",
+    "test:e2e": "npx playwright test tests/E2E_Module_Flow.spec.js",
     "test:rainy": "npx playwright test tests/rainyDayParentLogin.spec.js --reporter=list,allure-playwright",
     "test:report": "npx playwright test --reporter=html && echo 'Report ready: playwright-report/index.html'",
     "allure:generate": "npx allure generate allure-results -o allure-report --clean",
-    "allure:open": "npx allure open allure-report"
+    "allure:open": "npx allure open allure-report",
+    "allure:serve": "npx allure serve allure-results"
   }
 }

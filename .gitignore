@@ -1,41 +1,35 @@
+# Dependencies
 node_modules/
 
-# Playwright / test artifacts
-test-results/
-playwright-report/
-allure-results/
-allure-report/
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
 
-# Local docs/data exports and large attachments
-docs/data/
+# Allure
+/allure-results/
+/allure-report/
+
+# Error screenshots
+*.png
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
+
+# Temp files
+nul
+.history/
+
+# IDE
+.vscode/
+.idea/
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# IDE
-.vscode/
-
-# npm
-package-lock.json
-# Node
-node_modules/
-
-# Playwright / test artifacts
-test-results/
-playwright-report/
-allure-results/
-allure-report/
-
-# Local docs/data exports and large attachments
-docs/data/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-
-# npm
-package-lock.json
