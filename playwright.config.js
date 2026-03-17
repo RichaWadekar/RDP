@@ -1,10 +1,26 @@
-// playwright.config.js
+//** This is the brain of your Playwright project. It tells Playwright HOW to run tests.
+//playwright.config.js
 // See https://playwright.dev/docs/test-configuration for more options
+require('dotenv').config();
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
-  reporter: [['list'], ['html'], ['allure-playwright']],
-  testDir: './tests',
+  globalSetup: './global-setup.js',
+  reporter: [
+    ['list'],
+    ['html'],
+    ['allure-playwright'],
+    ['playwright-qase-reporter', {
+      apiToken: process.env.QASE_API_TOKEN,
+      projectCode: process.env.QASE_PROJECT_CODE,
+      runComplete: true,
+      basePath: 'https://api.qase.io/v1',
+      logging: true,
+      uploadAttachments: true,
+    }]
+  ],
+  // POM Structure: tests are now in tests/specs folder
+  testDir: './tests/specs',
 
   // Output folder for all test artifacts (screenshots, videos, traces)
   outputDir: './test-results',

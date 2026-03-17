@@ -1,13 +1,33 @@
+
 {
   "name": "playwright-automation",
   "version": "1.0.0",
-  "description": "Playwright automation skeleton project",
+  "description": "Playwright automation skeleton project - This file defines WHAT your project needs and HOW to run it (Project Identity + Dependencies + Scripts)",
   "main": "index.js",
+  "_dependencyNotes": {
+    "@playwright/test": "Core Playwright testing framework - provides test runner, assertions, browser automation",
+    "@types/node": "TypeScript type definitions for Node.js - enables IntelliSense and type checking",
+    "allure-commandline": "CLI tool to generate Allure reports - converts allure-results into visual HTML report",
+    "allure-playwright": "Connects Playwright to Allure reporting - captures test steps, screenshots, attachments",
+    "dotenv": "Loads .env file variables (QASE_API_TOKEN, QASE_PROJECT_CODE) into process.env",
+    "playwright-qase-reporter": "Sends test results to Qase.io platform - maps test IDs to Qase test cases"
+  },
   "devDependencies": {
     "@playwright/test": "^1.58.1",
     "@types/node": "^25.2.0",
     "allure-commandline": "^2.36.0",
-    "allure-playwright": "^3.4.3"
+    "allure-playwright": "^3.4.3",
+    "dotenv": "^17.3.1",
+    "playwright-qase-reporter": "^2.2.0"
+  },
+  "_scriptNotes": {
+    "test": "Runs ALL tests in tests/specs folder",
+    "test:e2e": "Runs only the E2E Module Flow test",
+    "test:rainy": "Runs rainyDayParent login test with list + allure reporters",
+    "test:report": "Runs all tests and generates HTML report in playwright-report/",
+    "allure:generate": "Creates Allure HTML report from allure-results folder",
+    "allure:open": "Opens the generated Allure report in browser",
+    "allure:serve": "Starts a local server to view Allure results live"
   },
   "scripts": {
     "test": "npx playwright test",
